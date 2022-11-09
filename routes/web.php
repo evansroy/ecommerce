@@ -19,8 +19,14 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [HomeController::class,'index']);
 
 Route::get('/redirect',[HomeController::class,'redirect']);
+
 Route::get('/view_category',[AdminController::class,'viewCategory'])->name('viewCategory');
 Route::post('/add_category',[AdminController::class,'addCategory']);
+Route::get('/delete_Category/{id}',[AdminController::class,'deleteCategory']);
+
+Route::get('/product_view',[AdminController::class,'productView'])->name('productView');
+
+Route::post('/add_products',[AdminController::class,'addProducts']);
 
 Route::middleware([
     'auth:sanctum',
